@@ -1,11 +1,13 @@
-<% content_for :title, "New phone number" %>
+<div class="centered-container">
+  <% content_for :title, "New phone number" %>
 
-<h1>New phone number</h1>
+  <h1>New phone number</h1>
 
-<%= render "form", phone_number: @phone_number %>
+  <%= render "form", phone_number: @phone_number %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to phone numbers", phone_numbers_path %>
+  <div>
+    <%= link_to "Back to phone numbers", phone_numbers_path %>
+  </div>
 </div>
