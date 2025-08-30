@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .centered-container {
   display: flex;
   flex-direction: column;
@@ -5,4 +10,50 @@
   justify-content: center;
   min-height: 80vh; /* 画面の縦方向の真ん中寄せ */
   text-align: center;
+}
+
+/* ナビゲーションバー全体 */
+.navbar {
+  background-color: #838080;
+  color: #fff;
+  padding: 0;          /* 上下左右の余白をゼロに */
+  margin: 0;           /* 外側の余白もゼロ */
+  position: sticky;    /* スクロールしても上に固定 */
+  top: 0;
+  width: 100%;         /* 横幅いっぱいに広げる */
+  z-index: 1000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* 内部レイアウト */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; /* 左右の余白も消す */
+  width: 100%;
+}
+
+/* 左側ロゴ */
+.navbar-logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 右側リンク */
+.navbar-right .nav-link {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.navbar-right .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ページ本体 */
+.content {
+  padding: 20px;
 }
