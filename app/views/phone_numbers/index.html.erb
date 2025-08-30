@@ -5,14 +5,31 @@
 
   <h1>Phone numbers</h1>
 
-  <div id="phone_numbers">
-    <% @phone_numbers.each do |phone_number| %>
-      <%= render phone_number %>
-      <p>
-        <%= link_to "Show this phone number", phone_number %>
-      </p>
-    <% end %>
-  </div>
+  <table class="phone-number-table">
+    <thead>
+      <tr>
+        <th class="col-number">電話番号</th>
+        <th class="col-description">説明</th>
+        <th class="col-count">カウント</th>
+        <th class="col-actions">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @phone_numbers.each do |phone_number| %>
+        <tr>
+          <td class="col-number"><%= phone_number.number %></td>
+          <td class="col-description"><%= phone_number.description.present? ? phone_number.description : "-" %></td>
+          <td class="col-count"><%= phone_number.count || 0 %></td>
+          <td class="col-actions">
+            <%= link_to "Show", phone_number %> |
+            <%= link_to "Edit", edit_phone_number_path(phone_number) %> |
+            <%= link_to "Delete", phone_number, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
+  <br>
   <%= link_to "New phone number", new_phone_number_path %>
 </div>
